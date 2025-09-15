@@ -1,7 +1,7 @@
-My Portfolio
-Project Info
+#My Portfolio
+#Project Info
 
-This is my personal portfolio project built with:
+#This is my personal portfolio project built with:
 
 Vite
 
