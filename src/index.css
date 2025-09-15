@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tech Portfolio Design System - Dark theme with neon accents */
+
+@layer base {
+  :root {
+    /* Core dark theme */
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Tech-inspired accent colors */
+    --primary: 192 95% 68%; /* Bright cyan */
+    --primary-foreground: 222 84% 4.9%;
+    
+    --secondary: 271 91% 65%; /* Electric purple */
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 142 76% 36%; /* Matrix green */
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 192 95% 68%;
+
+    --radius: 0.75rem;
+
+    /* Tech gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(192 95% 68%), hsl(271 91% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(271 91% 65%), hsl(142 76% 36%));
+    --gradient-accent: linear-gradient(135deg, hsl(192 95% 68%) 0%, hsl(271 91% 65%) 50%, hsl(142 76% 36%) 100%);
+
+    /* Glow effects */
+    --glow-primary: 0 0 20px hsl(192 95% 68% / 0.5);
+    --glow-secondary: 0 0 20px hsl(271 91% 65% / 0.5);
+    --glow-accent: 0 0 20px hsl(142 76% 36% / 0.5);
+
+    /* Animation speeds */
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: linear-gradient(135deg, hsl(222 84% 4.9%) 0%, hsl(217.2 32.6% 8%) 100%);
+    min-height: 100vh;
+  }
+
+  /* Tech grid background pattern */
+  .tech-grid {
+    background-image: 
+      linear-gradient(rgba(192, 95%, 68%, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(192, 95%, 68%, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Glowing border animation */
+  .glow-border {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: var(--transition-base);
+  }
+
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+}
+
+@layer components {
+  /* Hero button variant */
+  .btn-hero {
+    @apply relative px-8 py-4 rounded-lg font-semibold text-foreground;
+    @apply transition-all duration-300 ease-out;
+    @apply border border-primary/20 bg-card/50 backdrop-blur-sm;
+    @apply hover:border-primary hover:shadow-[var(--glow-primary)];
+    @apply hover:scale-105 hover:bg-primary/10;
+  }
+
+  /* Nav button variant */
+  .btn-nav {
+    @apply relative px-6 py-3 rounded-md font-medium text-foreground/80;
+    @apply transition-all duration-300 ease-out;
+    @apply hover:text-primary hover:bg-primary/10;
+    @apply hover:shadow-[0_0_15px_hsl(192_95%_68%_/_0.3)];
+  }
+
+  /* Project card */
+  .project-card {
+    @apply relative p-6 rounded-xl border border-border/50 bg-card/50 backdrop-blur-sm;
+    @apply transition-all duration-500 ease-out;
+    @apply hover:border-primary/50 hover:shadow-[var(--glow-primary)];
+    @apply hover:scale-[1.02] hover:bg-card/80;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Floating animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  /* Pulse glow */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 20px hsl(192 95% 68% / 0.3); }
+    100% { box-shadow: 0 0 30px hsl(192 95% 68% / 0.6), 0 0 40px hsl(271 91% 65% / 0.3); }
+  }
+}
