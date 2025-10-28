@@ -4,16 +4,28 @@ import Navigation from "@/components/Navigation";
 const Projects = () => {
   const projects = [
     {
+      title: " Feed The Need",
+      description:
+"Feed The Need is a web platform that bridges the gap between food donors and people in need. It helps reduce food waste by connecting surplus food sources with nearby beneficiaries and ensuring timely food distribution. The platform ensures transparency, coordination, and trust between donors and volunteers. It promotes a culture of sharing, compassion, and social responsibility within the community.",
+      tech: ["Php", "HTML", "CSS", "JavaScript", "API","My SQL","RENDER","Python"],
+      github: "https://github.com/manimaram/feed_the_need",
+      demo: "http://feed-the-need.infinityfreeapp.com/",
+      featured: true,
+    },
+    {
+      title: "CSAC - (Civil Services Aspirants Club)",
+      description:
+        "CSAC SNIST is the official website of the Civil Services Aspirants Club at SNIST, dedicated to guiding and inspiring students toward civil service careers.It showcases events, resources, and initiatives that help aspirants stay informed and motivated.The platform highlights achievements, updates, and opportunities for members of the CSAC community.It serves as a digital hub promoting leadership, awareness, and collective growth among civil service enthusiasts.",
+      tech: ["React", "HTML", "CSS", "JavaScript", "API","My SQL","RENDER","vite","Python"],
+      github: "https://github.com/manimaram/CSAC-WEBSITE",
+      demo: "https://csac-snist.onrender.com/",
+      featured: true,
+    },
+    {
       title: " Weather forecasting",
       description:
         "Developed a responsive weather forecasting web app using React,integrating real-time weather data from an external API.",
-      tech: [
-        "React",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "API",
-      ],
+      tech: ["React", "HTML", "CSS", "JavaScript", "API"],
       github: "https://github.com/manimaram/weather-forecasting",
       demo: "https://manimaram.github.io/weather-forecasting/",
       featured: true,
@@ -49,28 +61,17 @@ const Projects = () => {
       title: "Mobile-First PWA",
       description:
         "Progressive Web App with offline capabilities, push notifications, and native-like performance.",
-      tech: [
-        "React",
-        "PWA",
-        "Service Workers",
-        "IndexedDB",
-        "Workbox",
-      ],
+      tech: ["React", "PWA", "Service Workers", "IndexedDB", "Workbox"],
       github: "#",
       demo: "#",
       featured: false,
     },
-    
+
     {
       title: " Arogya sreenidhi",
       description:
         "Designed and developed a user-friendly food ordering web app with real-time order tracking, cashless payments, and automated alerts, streamlining canteen operations.",
-      tech: [
-        "Figma",
-        "Canva",
-        "Photo Shop",
-        "poster my wall",
-      ],
+      tech: ["Figma", "Canva", "Photo Shop", "poster my wall"],
       github: "#",
       demo: "#",
       featured: true,
@@ -147,7 +148,6 @@ const Projects = () => {
             ))}
           </div>
         </section>
-
       </main>
     </div>
   );
